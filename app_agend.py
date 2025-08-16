@@ -23,7 +23,7 @@ def salvar_contatos(contatos):
             for c in contatos
         ]
 
-        with open(ARQUIVO_CONTATOS, 'W') as arquivo:
+        with open(ARQUIVO_CONTATOS, 'w') as arquivo:
             json.dump(contatos_para_salvar, arquivo, indent=4, ensure_ascii=False)
     except Exception as e:
         print(f"Erro ao salvar contatos: {e}")
@@ -122,7 +122,7 @@ def menu_principal():
         print("4. Remover Contato")
         print("5. Sair")
 
-        opcao = input("\nEscolha uma opçao: ").strip()
+        opcao = input("\nEscolha uma opção: ").strip()
 
         if opcao == '1':
             adicionar_contatos()
@@ -130,6 +130,8 @@ def menu_principal():
             listar_contatos()
         elif opcao == '3':
             buscar_contato()
+        elif opcao == '4':
+            remover_contato()
         elif opcao == '5':
             print("\nSaindo da agenda. Até logo! ")
             break
